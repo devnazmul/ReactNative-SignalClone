@@ -22,7 +22,7 @@ const globalScreenOptions = {
 
   headerTitleStyle: {
     color: "#fff",
-    textAlign: "center"
+    // textAlign: "center"
   },
 
   headerTintColor: {

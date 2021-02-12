@@ -6,20 +6,20 @@ import React, { useState } from 'react'
 import { KeyboardAvoidingView, StyleSheet, Text, View } from 'react-native'
 
 import { Button, ThemeProvider, Image, Input } from 'react-native-elements';
+
+
+
+
 // ######################################
 // FUCTIONAL COMP IS HERE................
 // ######################################
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
     const login = () => {
         
     }
-
-
-
     return (
         <KeyboardAvoidingView behavior='padding'  style={styles.container}>
             <StatusBar style="light" />
@@ -52,8 +52,9 @@ const LoginScreen = () => {
                     }
                 />
             </View>
+
             <Button containerStyle={styles.button} title="Login" onPress={login} />
-            <Button containerStyle={styles.button} type="outline" title="Register" />
+            <Button containerStyle={styles.button} type="outline" title="Register" onPress={() => navigation.navigate("Register")} />
 
             <View style={{height: 100}} />
         </KeyboardAvoidingView>
@@ -61,6 +62,11 @@ const LoginScreen = () => {
 }
     
 export default LoginScreen;
+
+
+
+
+
 
 // ######################################
 // STYLE IS HERE.........................
