@@ -3,7 +3,7 @@
 // ######################################
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { KeyboardAvoidingView, StyleSheet, Text, View } from 'react-native'
 
 import { Button, ThemeProvider, Image, Input } from 'react-native-elements';
 // ######################################
@@ -14,11 +14,14 @@ const LoginScreen = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const login = () => {
+        
+    }
 
 
 
     return (
-        <View>
+        <KeyboardAvoidingView behavior='padding'  style={styles.container}>
             <StatusBar style="light" />
             <Image
                 source={{
@@ -49,22 +52,32 @@ const LoginScreen = () => {
                     }
                 />
             </View>
-            <Button containerStyle={styles.button} title="Login" />
+            <Button containerStyle={styles.button} title="Login" onPress={login} />
             <Button containerStyle={styles.button} type="outline" title="Register" />
-        </View>
+
+            <View style={{height: 100}} />
+        </KeyboardAvoidingView>
     )
 }
-
-export default LoginScreen
+    
+export default LoginScreen;
 
 // ######################################
 // STYLE IS HERE.........................
 // ######################################
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 10,
+        backgroundColor: "#fff",
+    },
     inputContainer: {
-
+        width: 300,
     },
     button: {
-
+        width: 200,
+        marginTop: 10,
     }
 })
