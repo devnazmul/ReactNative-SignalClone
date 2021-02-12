@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
 
 // ######################################
 // MAKE STACK HERE...................
@@ -15,7 +16,6 @@ const Stack = createStackNavigator();
 // STYSHEET IS HERE...................
 // ######################################
 const globalScreenOptions = {
-
   headerStyle: {
     backgroundColor: "#2c68ed",
   },
@@ -28,7 +28,6 @@ const globalScreenOptions = {
   headerTintColor: {
     color: "#fff"
   },
-
 }
 
 // ######################################
@@ -39,7 +38,8 @@ export default function App() {
 
     <NavigationContainer>
       <Stack.Navigator screenOptions={globalScreenOptions}>
-        <Stack.Screen name='Login' component={ LoginScreen } />
+        <Stack.Screen name='Login' component={LoginScreen} />
+        <Stack.Screen name='Register' component={ RegisterScreen } />
       </Stack.Navigator>
     </NavigationContainer>
     
